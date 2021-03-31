@@ -7,7 +7,7 @@
 	yn=$(ip a | grep inet | grep -v inet6 | grep -v 127 | cut -d " " -f 6)
 	NET=$yn
 	ipp=$(echo $yn | cut -d "." -f 1)
-	python3 ../Files/Check_hosts.py -t $NET -o
+	python3 ../Check_hosts.py -t $NET -o
 	for i in {243..248} {248..243} ; do echo -en "\e[38;5;${i}m######\e[0m" ; done ; echo
 	echo -e "\e[31m[Port Scanning]\e[0m"
 	###################FUNCTION##########################
