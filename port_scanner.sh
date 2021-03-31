@@ -1,7 +1,7 @@
 #!/bin/bash
 	mkdir port_scan 2>/dev/null
 	cd port_scan
-	cat ../Files/logo.txt
+	cat ../logo.txt
 	echo ""
         echo -e "\e[31m[Host Discovery]\e[0m"
 	yn=$(ip a | grep inet | grep -v inet6 | grep -v 127 | cut -d " " -f 6)
@@ -65,7 +65,7 @@ then
 		ip=$(echo "$line" )
 			rm .*  O* 2>/dev/null
 			echo -e "IP ADDRESS : \e[41m$line\e[0m"
-			python3 ../Files/Check_ports.py -t $ip > .Oport_$ip
+			python3 ../Check_ports.py -t $ip > .Oport_$ip
 			cat .scan.txt | sed 's/,/\n/g' > Oport_$ip
 			er=$(cat .scan.txt |grep "open")
 			if [ ! -z $er ] 2>/dev/null
@@ -97,7 +97,7 @@ then
 		then
 			rm .*  O*  2>/dev/null
 			echo -e "IP ADDRESS : \e[41m$sip\e[0m"
-			python3 ../Files/Check_ports.py -t $sip > .Oport_$sip 
+			python3 ../Check_ports.py -t $sip > .Oport_$sip 
 			cat .scan.txt | sed 's/,/\n/g' > Oport_$sip
 			er=$(cat .scan.txt |grep "open")
 			if [ -z $er ] 2>/dev/null
