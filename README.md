@@ -14,7 +14,7 @@
 git clone https://github.com/malbana77/BEHOLDA
 cd BEHOLDA
 chmod +x Beholda.sh
-./Beholda.sh
+sudo ./Beholda.sh
 ```
 ### Screenshot
 
