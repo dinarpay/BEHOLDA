@@ -13,7 +13,6 @@
 	###################FUNCTION##########################
 vers () {
 	file=$1
-
 	while read line ; do
 
 		port=$(echo "$line"|grep "portid" | cut -d "'" -f 4  )
@@ -52,8 +51,6 @@ vers () {
 	rm .scan.txt
 }
 
-
-
 PS3="Enter your choose :# " export PS3
 select loop in 'All Network' 'Specific IP'
 do
@@ -81,9 +78,7 @@ then
 			echo ""
 	done < ${file}
 	rm .*  O*  2>/dev/null
-	exit
-	
-	
+	exit	
 	
 elif [ "$loop" == 'Specific IP' ]
 then
